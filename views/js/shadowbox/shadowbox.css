@@ -1,0 +1,182 @@
+#sb-title-inner,
+#sb-info-inner,
+#sb-loading-inner,
+div.sb-message {
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	color:#fff;
+	font-size:12px;
+}
+#sb-container {
+	position:fixed;
+	margin:0;
+	padding:0;
+	top:0;
+	left:0;
+	z-index:999;
+	text-align:left;
+	visibility:hidden;
+	display:none;
+}
+#sb-overlay {
+	position:relative;
+	height:100%;
+	width:100%;
+}
+#sb-wrapper {
+	position:absolute;
+	visibility:hidden;
+	width:100px;
+}
+
+/*=========================Titulo arriba + cerrar*/
+#sb-title {
+	position:relative;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+}
+#sb-title,
+#sb-title-inner {
+	height:20px;
+	line-height:20px;
+}
+#sb-title-inner {
+	position:absolute;
+	top:0px;
+	left:25px;
+	width:85%;
+	padding-left:16px;
+}
+#sb-nav-close {
+	width: 20px;
+	height: 20px;
+	display: block;
+	background: url(close.png) 0px 0px no-repeat;
+	cursor: pointer;
+	position:absolute;
+	top:0px;
+	right:35px;
+}
+
+
+/*=========================Navegacion*/
+#sb-nav {
+	position:absolute;
+	z-index:1001;
+	height:80px;
+	width:100%;
+	top:50%;
+	margin-top:-40px;
+}
+#sb-nav a {
+	display:block;
+	height:80px;
+	width:80px;
+	cursor:pointer;
+	background-repeat:no-repeat;
+}
+#sb-nav-next {
+	background-image:url(next.png);
+	position:absolute;
+	right:0px;
+	top:0px;
+	
+}
+#sb-nav-previous {
+	background-image:url(previous.png);
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+
+/*=========================Zona foto*/
+#sb-wrapper-inner {
+	position:relative;
+	border:1px solid #303030;
+	overflow:hidden;
+	height:100px;
+	margin:0 40px 0 40px; /*Con esta linea doy la margen a los lados de la foto*/
+}
+#sb-body {
+	position:relative;
+	height:100%;
+}
+#sb-body-inner {
+	position:absolute;
+	height:100%;
+	width:100%;
+}
+#sb-player.html {
+	height:100%;
+	overflow:auto;
+}
+#sb-body img {
+	border:none;
+}
+
+/*=========================Cargando*/
+#sb-loading {
+	position:relative;
+	height:100%;
+}
+#sb-loading-inner {
+	position:absolute;
+	line-height:80px;
+	height:80px;
+	top:50%;
+	width:100%;
+	text-align:center;
+	margin-top:-40px;
+}
+#sb-loading-inner span {
+	background:url(loading.gif) 0px 30px no-repeat;
+	padding-left:30px;
+	display:inline-block;
+	line-height:80px;
+}
+#sb-body,
+#sb-loading {
+	background-color:#060606;
+}
+
+
+/*=========================Contador abajo*/
+#sb-info {
+	position:relative;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+}
+#sb-info,
+#sb-info-inner {
+	height:20px;
+	line-height:20px;
+}
+#sb-counter {
+	float:left;
+	width:100%;
+	text-align:center;
+	padding-top:5px;
+}
+#sb-counter a {
+	padding:0 4px 0 0;
+	text-decoration:none;
+	cursor:pointer;
+	color:#fff;
+}
+#sb-counter a.sb-counter-current {
+	text-decoration:underline;
+}
+
+
+/*=========================Mensaje*/
+div.sb-message {
+	padding:10px;
+	text-align:center;
+}
+div.sb-message a:link,
+div.sb-message a:visited {
+	color:#fff;
+	text-decoration:underline;
+}

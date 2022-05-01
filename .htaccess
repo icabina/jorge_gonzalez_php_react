@@ -1,0 +1,201 @@
+#---------------------------------Woff Fonts
+#<FilesMatch ".(eot|ttf|otf|woff|woff2)">
+#	Header set Access-Control-Allow-Origin "*"
+#</FilesMatch>
+#---------------------------------
+<IfModule mod_security.c>
+  SecFilterEngine Off
+  SecFilterScanPOST Off
+</IfModule>
+#---------------------------------Favicon
+AddType image/x-icon .ico
+RewriteRule ^favicon.ico favicon.ico [NC,L]
+
+
+#---------------------------------Evita que se muestre contenido de directorios cuando no hay un index
+Options All -Indexes
+
+
+#---------------------------------Cache del navegador 1 mes(SEO) 
+<IfModule mod_expires.c>
+	<Filesmatch "\.(jpg|jpeg|png|gif|js|css|swf|ico|woff|mp3)$">
+		ExpiresActive on
+		Header set Cache-Control "max-age=2592000, public"
+	</Filesmatch>
+</IfModule>
+
+
+#---------------------------------GZIP Compresion (SEO)
+<IfModule mod_deflate.c>
+	AddOutputFilterByType DEFLATE text/html
+	AddOutputFilterByType DEFLATE text/css
+	AddOutputFilterByType DEFLATE text/javascript
+	AddOutputFilterByType DEFLATE text/xml
+	AddOutputFilterByType DEFLATE text/plain
+	AddOutputFilterByType DEFLATE image/x-icon
+	AddOutputFilterByType DEFLATE image/svg+xml
+	AddOutputFilterByType DEFLATE application/rss+xml
+	AddOutputFilterByType DEFLATE application/javascript
+	AddOutputFilterByType DEFLATE application/x-javascript
+	AddOutputFilterByType DEFLATE application/xml
+	AddOutputFilterByType DEFLATE application/xhtml+xml
+	AddOutputFilterByType DEFLATE application/x-font
+	AddOutputFilterByType DEFLATE application/x-font-truetype
+	AddOutputFilterByType DEFLATE application/x-font-ttf
+	AddOutputFilterByType DEFLATE application/x-font-otf
+	AddOutputFilterByType DEFLATE application/x-font-opentype
+	AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+	AddOutputFilterByType DEFLATE font/ttf
+	AddOutputFilterByType DEFLATE font/otf
+	AddOutputFilterByType DEFLATE font/opentype
+	# For Olders Browsers Which Can't Handle Compression
+	BrowserMatch ^Mozilla/4 gzip-only-text/html
+	BrowserMatch ^Mozilla/4\.0[678] no-gzip
+	BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+</IfModule>
+
+
+#---------------------------------Forzar HTTPS y WWW
+<IfModule mod_rewrite.c>
+	# Activamos la redireccion
+	#RewriteEngine On
+	# NON www a WWW
+	#RewriteCond %{HTTP_HOST} !^www\.
+	#RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+	# HTTP a HTTPS
+	#RewriteCond %{HTTPS} off
+	#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301] 
+</IfModule>
+
+
+#---------------------------------SEF
+<IfModule mod_rewrite.c>
+	# Reglas redireccion URL amigables
+	Options +FollowSymLinks
+	RewriteEngine on
+	# RewriteBase /
+	RewriteCond %{SCRIPT_FILENAME} !-d
+	RewriteCond %{SCRIPT_FILENAME} !-f
+</IfModule>
+
+
+#---------------------------------SEF: SITIO PUBLICO
+<IfModule mod_rewrite.c>
+	Rewriterule ^error404$ index.php?controller=error404
+	Rewriterule ^inicio$ index.php?controller=inicio
+    Rewriterule ^proyectos$ index.php?controller=proyectos
+	Rewriterule ^proyecto/([0-9]+)$ index.php?controller=proyecto&ID_proyecto=$1
+	Rewriterule ^trayectoria/(.+)$ index.php?controller=trayectoria&categoria=$1
+    Rewriterule ^trayectoria_detalle/([0-9]+)$ index.php?controller=trayectoria_detalle&ID_trayectoria=$1
+	Rewriterule ^nosotros$ index.php?controller=nosotros
+	Rewriterule ^contacto$ index.php?controller=contacto
+	Rewriterule ^postventas$ index.php?controller=postventas
+	Rewriterule ^enviado$ index.php?controller=enviado
+	Rewriterule ^envia-contacto$ index.php?controller=contacto&method=enviaContactoGeneral
+	
+
+
+
+
+#---------------------------------SEF: Administrador
+
+	#---Acceso
+	Rewriterule ^acceso$ index.php?controller=admin
+	Rewriterule ^panel/login$ index.php?controller=admin&method=login
+	Rewriterule ^panel/login/error$ index.php?controller=admin&msg=login_error
+	Rewriterule ^panel/logout$ index.php?controller=admin&method=logout
+	#
+	#---Dashboard Inicio
+	Rewriterule ^panel/dashboard$ index.php?controller=admin&method=dashboard
+	#
+
+
+	#---proyectos
+	Rewriterule ^panel/proyectos$ index.php?controller=admin&method=proyectos
+	Rewriterule ^panel/proyectos/ok/insert$ index.php?controller=admin&method=proyectos&msg=insert
+	Rewriterule ^panel/proyectos/ok/update$ index.php?controller=admin&method=proyectos&msg=update
+	Rewriterule ^panel/proyectos/ok/delete$ index.php?controller=admin&method=proyectos&msg=delete
+	#
+	Rewriterule ^panel/proyecto/new$ index.php?controller=admin&method=proyecto&task=new
+	Rewriterule ^panel/proyecto/new/insert$ index.php?controller=admin&method=proyecto_Query&action=insert
+	Rewriterule ^panel/proyecto/edit/([0-9]+)$ index.php?controller=admin&method=proyecto&task=edit&ID_proyecto=$1
+	Rewriterule ^panel/proyecto/edit/update$ index.php?controller=admin&method=proyecto_Query&action=update
+	Rewriterule ^panel/proyecto/remove/([0-9]+)$ index.php?controller=admin&method=proyecto&task=remove&ID_proyecto=$1
+	Rewriterule ^panel/proyecto/remove/delete$ index.php?controller=admin&method=proyecto_Query&action=delete
+	#
+	
+	Rewriterule ^panel/proyecto_remove_foto_presentacion/([0-9]+)/(.+)$ index.php?controller=admin&method=proyecto_item_update&ID_proyecto=$1&foto_presentacion=$2
+	Rewriterule ^panel/proyecto_remove_foto_ubicacion/([0-9]+)/(.+)$ index.php?controller=admin&method=proyecto_item_update&ID_proyecto=$1&foto_ubicacion=$2
+	Rewriterule ^panel/proyecto_remove_contacto_foto/([0-9]+)/(.+)$ index.php?controller=admin&method=proyecto_item_update&ID_proyecto=$1&contacto_foto=$2
+
+	Rewriterule ^panel/proyecto_remove_brochure/([0-9]+)/(.+)$ index.php?controller=admin&method=proyecto_item_update&ID_proyecto=$1&brochure=$2
+	Rewriterule ^panel/proyecto_remove_especificaciones/([0-9]+)/(.+)$ index.php?controller=admin&method=proyecto_item_update&ID_proyecto=$1&especificaciones=$2
+
+	
+
+	#
+	Rewriterule ^panel/proyecto_foto/new/([0-9]+)$ index.php?controller=admin&method=proyecto_foto&task=new&ID_proyecto=$1
+	Rewriterule ^panel/proyecto_foto/new/insert$ index.php?controller=admin&method=proyecto_fotoQuery&action=insert
+	Rewriterule ^panel/proyecto_foto/edit/([0-9]+)/([0-9]+)$ index.php?controller=admin&method=proyecto_foto&task=edit&ID_proyecto=$1&ID_foto=$2
+	Rewriterule ^panel/proyecto_foto/edit/update$ index.php?controller=admin&method=proyecto_fotoQuery&action=update
+	Rewriterule ^panel/proyecto_foto_remove/([0-9]+)/([0-9]+)$ index.php?controller=admin&method=proyecto_item_remove&ID_proyecto=$1&ID_foto=$2
+	#
+
+	Rewriterule ^panel/proyecto_recorrido/new/([0-9]+)$ index.php?controller=admin&method=proyecto_recorrido&task=new&ID_proyecto=$1
+	Rewriterule ^panel/proyecto_recorrido/new/insert$ index.php?controller=admin&method=proyecto_recorridoQuery&action=insert
+	Rewriterule ^panel/proyecto_recorrido/edit/([0-9]+)/([0-9]+)$ index.php?controller=admin&method=proyecto_recorrido&task=edit&ID_proyecto=$1&ID_recorrido=$2
+	Rewriterule ^panel/proyecto_recorrido/edit/update$ index.php?controller=admin&method=proyecto_recorridoQuery&action=update
+	Rewriterule ^panel/proyecto_remove_recorrido/([0-9]+)/([0-9]+)$ index.php?controller=admin&method=proyecto_item_remove&ID_proyecto=$1&ID_recorrido=$2
+	#
+
+
+
+	Rewriterule ^panel/proyecto_video/new/([0-9]+)$ index.php?controller=admin&method=proyecto_video&task=new&ID_proyecto=$1
+	Rewriterule ^panel/proyecto_video/new/insert$ index.php?controller=admin&method=proyecto_videoQuery&action=insert
+	Rewriterule ^panel/proyecto_video/edit/([0-9]+)/([0-9]+)$ index.php?controller=admin&method=proyecto_video&task=edit&ID_proyecto=$1&ID_video=$2
+	Rewriterule ^panel/proyecto_video/edit/update$ index.php?controller=admin&method=proyecto_videoQuery&action=update
+	Rewriterule ^panel/proyecto_remove_video/([0-9]+)/([0-9]+)$ index.php?controller=admin&method=proyecto_item_remove&ID_proyecto=$1&ID_video=$2
+	#	
+
+	Rewriterule ^panel/proyecto_planta/new/([0-9]+)$ index.php?controller=admin&method=proyecto_planta&task=new&ID_proyecto=$1
+	Rewriterule ^panel/proyecto_planta/new/insert$ index.php?controller=admin&method=proyecto_plantaQuery&action=insert
+	Rewriterule ^panel/proyecto_planta/edit/([0-9]+)/([0-9]+)$ index.php?controller=admin&method=proyecto_planta&task=edit&ID_proyecto=$1&ID_planta=$2
+	Rewriterule ^panel/proyecto_planta/edit/update$ index.php?controller=admin&method=proyecto_plantaQuery&action=update
+	Rewriterule ^panel/proyecto_remove_planta/([0-9]+)/([0-9]+)$ index.php?controller=admin&method=proyecto_item_remove&ID_proyecto=$1&ID_planta=$2
+	#	
+
+	Rewriterule ^panel/proyecto_avance/new/([0-9]+)$ index.php?controller=admin&method=proyecto_avance&task=new&ID_proyecto=$1
+	Rewriterule ^panel/proyecto_avance/new/insert$ index.php?controller=admin&method=proyecto_avanceQuery&action=insert
+	Rewriterule ^panel/proyecto_avance/edit/([0-9]+)/([0-9]+)$ index.php?controller=admin&method=proyecto_avance&task=edit&ID_proyecto=$1&ID_avance=$2
+	Rewriterule ^panel/proyecto_avance/edit/update$ index.php?controller=admin&method=proyecto_avanceQuery&action=update
+	Rewriterule ^panel/proyecto_remove_avance/([0-9]+)/([0-9]+)$ index.php?controller=admin&method=proyecto_item_remove&ID_proyecto=$1&ID_avance=$2
+
+
+
+
+
+	
+	#---Home Banner
+	Rewriterule ^panel/banners$ index.php?controller=admin&method=home_banners
+	Rewriterule ^panel/banners/ok/insert$ index.php?controller=admin&method=home_banners&msg=insert
+	Rewriterule ^panel/banners/ok/update$ index.php?controller=admin&method=home_banners&msg=update
+	Rewriterule ^panel/banners/ok/delete$ index.php?controller=admin&method=home_banners&msg=delete
+	#
+	#
+	Rewriterule ^panel/home_banner/new$ index.php?controller=admin&method=home_banner&task=new
+	Rewriterule ^panel/home_banner/new/insert$ index.php?controller=admin&method=home_bannerQuery&action=insert
+	Rewriterule ^panel/home_banner/edit/([0-9]+)$ index.php?controller=admin&method=home_banner&task=edit&ID_banner=$1
+	Rewriterule ^panel/home_banner/edit/update$ index.php?controller=admin&method=home_bannerQuery&action=update
+	Rewriterule ^panel/home_banner/remove/([0-9]+)$ index.php?controller=admin&method=home_banner&task=remove&ID_banner=$1
+	Rewriterule ^panel/home_banner/remove/delete$ index.php?controller=admin&method=home_bannerQuery&action=delete
+
+	#---Usuario Administrador
+	Rewriterule ^panel/administrador$ index.php?controller=admin&method=administrador
+	Rewriterule ^panel/administrador/update$ index.php?controller=admin&method=administradorQuery&action=update
+	Rewriterule ^panel/administrador/ok/update$ index.php?controller=admin&method=administrador&msg=update
+	#
+
+</IfModule>
+
+#---------------------------------Error 404
+#ErrorDocument 404 http://www.iv3.com
