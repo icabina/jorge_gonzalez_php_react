@@ -66,7 +66,7 @@
 
 
 
-    <div class="fila main supermargen">
+    <div class="fila main greatmargen">
         <div class="cols flx max">
             <div class="col col_2 flx right">
                 <img src="views/images/home_1.jpg" alt="" class="full rspnsv halfmargen" />
@@ -85,7 +85,7 @@
 
                 </section>
             </div>
-            <div class="col col_2 flx padless desk">
+            <div class="col col_2 flx left desk">
                 <!--  <div class="bg" style="background-image:url(views/images/home_1.jpg)"></div> -->
 
                 <img src="views/images/home_1.jpg" alt="Jorge Gonzalez Ingeniería Medellín Colombia">
@@ -106,11 +106,15 @@
     <div class="fila main supermargen">
         <div class="cols">
             <div class="col col_1">
-                <h2>Últimos proyectos ejecutados</h2>
+                <h2 class="title goodmargen">Últimos proyectos ejecutados</h2>
             </div>
 
-            <div class="fila" id="destacados">
+            <div class="cols margen" id="destacados">
 
+            </div>
+
+            <div class="fila">
+                <a href="proyectos" target="_self" class="btn clear">ver todos</a>
             </div>
         </div>
     </div>
@@ -120,7 +124,7 @@
     <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
 
     <!-- Load our React component. -->
     <script src="controllers/destacados.jsx"></script>

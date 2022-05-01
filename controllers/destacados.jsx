@@ -6,8 +6,6 @@ class Destacados extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      error: null,
-      isLoaded: false,
       items: [],
     };
   }
@@ -23,13 +21,30 @@ class Destacados extends React.Component {
   }
 
   render() {
-    const { error, isLoaded, items } = this.state;
+    const { items } = this.state;
 
     const listItems = items.map((item) =>
-      React.createElement("div", { className: "col col_2" }, [
-        React.createElement("h2", {}, item.nombre),
-        React.createElement("h3", {}, item.descripcion),
-        React.createElement("h3", {}, item.categoria),
+      React.createElement("div", { className: "col col_2 project" }, [
+        React.createElement(
+          "div",
+          {
+            className: "foto",
+            style: { backgroundImage: `url(datas/${item.mini})` },
+          },
+          null
+        ),
+        React.createElement("h3", {}, item.nombre),
+        React.createElement("h4", {}, item.ciudad),
+        React.createElement(
+          "a",
+          {
+            className: "btn",
+            href: `proyecto/${item.id}`,
+            target: "_self",
+          },
+          "ver"
+        ),
+        React.createElement("p", {}, item.descripcion),
       ])
     );
     return listItems;

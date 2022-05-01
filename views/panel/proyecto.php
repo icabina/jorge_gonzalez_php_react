@@ -102,7 +102,7 @@
 
                     <div class="fila">
                         <label>Descripción</label>
-                        <textarea name="direccion"><?php echo $direccion; ?></textarea>
+                        <textarea name="descripcion"><?php echo $descripcion; ?></textarea>
                     </div>
 
 

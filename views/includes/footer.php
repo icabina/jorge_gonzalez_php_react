@@ -1,17 +1,26 @@
 <footer class="fila">
-    <div class="cols full">
-        <div class="col col_2">
-            <div class="fila"><a href="tel:+573182513388" class="tel">+57 318 251 3388</a></div>
-            <div class="fila tinymargen"><a href="tel:+576019279304" class="tel">+57 601 927 9304</a></div>
-            <h4>Carrera 78 #11- C21/ Bogotá, Colombia</h4>
+    <div class="cols">
+        <div class="col col_izk">
+            <img class="logo" src="views/images/logo_g.svg" alt="" />
+            <p><a href="tel:+576044237149" class="tel">+57 (604) 4237149</a></p>
+            <p>Medellín, Colombia</p>
         </div>
-        <div class="col col_2">
+
+        <div class="col col_der">
+            <ul class="redes">
+                <li><a href="#" target="_self"><img src="views/images/footer_instagram.svg"> </a></li>
+                <li><a href="#" target="_self"><img src="views/images/footer_fb.svg"> </a></li>
+                <li><a href="#" target="_self"><img src="views/images/footer_yt.svg"> </a></li>
+            </ul>
             <a href="#" target="_self" id="subir">subir</a>
-            <a href="inicio" class="logo white"><img src="views/images/logo_w.svg" alt="" /></a>
-            <h4 class="copy"><span>© Derechos Reservados <?php echo date('Y')?></span></h4>
-            <p class="creditos"><a href="https://www.emoticaweb.com" target="_blank">Diseño web
-                    (-:emótica) 2020
-                    <span>Aplicaciones y sitios web.</span></a></p>
+            <section>
+                <h4>
+                    © <?php echo date('Y')?><br />
+                    Jorge González Ingeniería</h4>
+                <p class="creditos"><a href="https://www.emoticaweb.com" target="_blank">Diseño web
+                        (-:emótica) 2022
+                        <span>Aplicaciones y sitios web.</span></a></p>
+            </section>
 
         </div>
 

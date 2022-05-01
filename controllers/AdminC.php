@@ -378,6 +378,7 @@ class AdminC{
 			$parameters = array(
 				'nombre' => sanitize_xss($_POST['nombre']),
 				'direccion' => sanitize_xss($_POST['direccion']),
+				'descripcion' => sanitize_xss($_POST['descripcion']),
 				'categoria' => sanitize_xss($_POST['categoria']),
 				'ciudad' => sanitize_xss($_POST['ciudad']),
 				'area' => sanitize_xss($_POST['area']),
