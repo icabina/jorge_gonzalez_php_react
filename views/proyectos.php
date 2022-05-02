@@ -20,7 +20,7 @@
 
 </head>
 
-<body class="all_proyectos">
+<body class="all_proyectos <?php echo $clase ?>">
 
 
 
@@ -31,42 +31,10 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="fila main margen">
+    <div class="fila banner">
         <div class="cols">
             <div class="col col_1">
-                <h1>Proyectos <strong>En Venta</strong></h2>
-                    <hr />
+                <h1>Proyectos <?php echo $category ?></h1>
             </div>
         </div>
     </div>
@@ -76,45 +44,23 @@
 
 
     <?php if($proyectos != NULL){ ?>
-    <?php foreach ($proyectos as $proyecto){?>
-
-
     <div class="fila main supermargen">
-        <div class="cols flx tall">
-
-            <div class="col col_3_4 flx padless desk">
-                <div class="bg" style="background-image:url(datas/<?php echo $proyecto['grande'];?>)"><a
-                        href="proyecto/<?php echo $proyecto['ID_proyecto'];?>" target="_self"></a>
+        <div class="cols">
+            <?php foreach ($proyectos as $proyecto){?>
+            <div class="col col_2 project">
+                <div class="foto" style="background-image: url(datas/<?php echo $proyecto['mini'] ?>)">
+                    <a href="proyecto/<?php echo $proyecto['ID_proyecto'] ?>" target="_self"></a>
                 </div>
-
+                <h3><?php echo $proyecto['nombre'] ?></h3>
+                <h4><?php echo $proyecto['ciudad'] ?></h4>
+                <a href="proyecto/<?php echo $proyecto['ID_proyecto'] ?>" target="_self" class="btn">ver</a>
+                <p>
+                    <?php echo $proyecto['descripcion'] ?> </p>
 
             </div>
-            <div class="col col_1_4 flx">
-                <p class="rspnsv mediamargen"><a href="proyecto/<?php echo $proyecto['ID_proyecto'];?>"
-                        target="_self"><img src="datas/<?php echo $proyecto['mini'];?>"
-                            alt="<?php echo $proyecto['nombre'];?>" class="full" /></a>
-                </p>
-                <section>
-
-                    <p class="mediamargen"><a href="proyecto/<?php echo $proyecto['ID_proyecto'];?>"
-                            target="_self"><?php if($proyecto['logo'] != ''){?><img
-                                src="datas/<?php echo $proyecto['logo'];?>" alt="<?php echo $proyecto['nombre'];?>"
-                                class="logo" /><?php }  ?></a>
-                    </p>
-
-                    <h2><strong><?php echo $proyecto['tipo'];?> en <?php echo $proyecto['ciudad'];?></strong></h2>
-                    <p><?php echo $proyecto['direccion'];?></p>
-                    <h3><strong>Desde $<?php echo $proyecto['precio'];?></strong></h3>
-                    <p>Áreas<br />
-                        <?php echo $proyecto['area'];?></p>
-                </section>
-            </div>
+            <?php } ?>
         </div>
     </div>
-
-
-
-    <?php } ?>
     <?php } ?>
 
 

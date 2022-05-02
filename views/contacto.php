@@ -20,7 +20,7 @@
 
 </head>
 
-<body class="contact">
+<body class="contacto">
 
 
 
@@ -31,12 +31,10 @@
 
 
 
-
-    <div class="fila main trimargen">
+    <div class="fila banner">
         <div class="cols">
             <div class="col col_1">
-                <h1><strong>Contacto</strong></h2>
-                    <hr />
+                <h1>Contacto</h1>
             </div>
         </div>
     </div>

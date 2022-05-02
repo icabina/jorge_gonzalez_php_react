@@ -1,13 +1,13 @@
 <?php
 
 
-class PostventasC{
+class AliadosC{
 
 	#------------Carga Home
 	public static function LoadC(){
 
 		#Carga view
-		include('views/postventas.php');
+		include('views/aliados.php');
 		die();
 	}
 	

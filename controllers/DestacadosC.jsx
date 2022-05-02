@@ -31,7 +31,14 @@ class Destacados extends React.Component {
             className: "foto",
             style: { backgroundImage: `url(datas/${item.mini})` },
           },
-          null
+          React.createElement(
+            "a",
+            {
+              href: `proyecto/${item.id}`,
+              target: "_self",
+            },
+            null
+          )
         ),
         React.createElement("h3", {}, item.nombre),
         React.createElement("h4", {}, item.ciudad),

@@ -100,9 +100,9 @@
                         <input name="direccion" type="text" value="<?php echo $direccion; ?>">
                     </div>
 
-                    <div class="fila">
+                    <div class="fila halfmargen">
                         <label>Descripción</label>
-                        <textarea name="descripcion"><?php echo $descripcion; ?></textarea>
+                        <textarea name="descripcion" class="ckeditor"><?php echo $descripcion; ?></textarea>
                     </div>
 
 
@@ -183,10 +183,16 @@
 
                         <label>Fin de obra</label>
                         <input name="obra_fin" type="text" value="<?php echo $obra_fin; ?>">
+
+                        <label>Año</label>
+                        <input name="fecha" type="number" value="<?php echo $fecha; ?>">
                     </div>
                     <div class="col col_2_3">
-                        <label>Contratante</label>
-                        <textarea name="contratante"><?php echo $contratante; ?></textarea>
+
+                        <div class="fila mediamargen">
+                            <label>Contratante</label>
+                            <textarea name="contratante" class="ckeditor"><?php echo $contratante; ?></textarea>
+                        </div>
 
 
                         <label>Web del proyecto</label>

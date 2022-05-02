@@ -43,8 +43,8 @@
                             <th></th>
                             <th>Nombre</th>
                             <th>Ciudad</th>
-                            <th>Tipo</th>
-
+                            <th>Categoría</th>
+                            <th>Año</th>
                             <th><?php /*?>Acciones<?php */?></th>
                         </tr>
                     </thead>
@@ -61,6 +61,7 @@
                             <td class="large"><span>Nombre:</span><?php echo $registro['nombre'];?></td>
                             <td><span>Ciudad:</span><?php echo $registro['ciudad'];?></td>
                             <td class="capital"><span>Categoría:</span><?php echo $registro['categoria'];?></td>
+                            <td class="capital"><span>Año:</span><?php echo $registro['fecha'];?></td>
                             <td>
                                 <a href="panel/proyecto/remove/<?php echo $registro['ID_proyecto'];?>"
                                     class="btn_tabla_eliminar" title="Eliminar">Eliminar</a>

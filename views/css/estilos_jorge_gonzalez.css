@@ -191,8 +191,7 @@ label{
 	min-height: 50vh;
 }
 .cols.flx.medium{
-	min-height: 320px;
-	max-width: 1280px;
+	max-width: 1180px;
 }
 @media screen and (max-width: 979px){
 .cols.flx.medium{
@@ -231,14 +230,17 @@ header .cols{
 .col.left{
 	text-align:left !important;
 	justify-content: center !important;
-	padding-left: 15px !important;
+	padding-left: 30px !important;
 	padding-right: 50px;
 	align-items: flex-start;
+}
+.col.left *{
+	text-align: left;
 }
 .col.right{
 	text-align:right !important;
 	justify-content: center !important;
-	padding-right: 15px !important;
+	padding-right: 30px !important;
 	padding-left: 50px;
 	align-items: flex-end;
 }
@@ -794,6 +796,9 @@ input.btn:hover{
 /*====================================*/
 .header{
 	z-index: 100;
+	position: absolute;
+	left: 0px;
+	top: 0px;
 }
 header{
 	text-align: center;
@@ -821,9 +826,6 @@ header .logo.black{
 	display: inline-block;
 }
 .clear header .logo.black{
-	display: none;
-}
-header .logo.white{
 	display: none;
 }
 .clear header .logo.white{
@@ -939,7 +941,7 @@ header ul.menu .dropdown{
 	width: 190px;
 	height: auto;
 	padding: 50px 0 0 0;
-	z-index: 20;
+	z-index: 0;
 }
 @media screen and (max-width: 1179px){
 header ul.menu .dropdown{
@@ -972,7 +974,7 @@ header ul.menu .dropdown ul{
 }
 header ul.menu li a{
 	text-decoration: none !important;
-	color: #000;
+	color: #fff;
 	font-size: 1em;
 	line-height: 45px;
 	margin: 0 0 0 0px;
@@ -1019,7 +1021,7 @@ header ul.menu li a.youtube:hover{
 	opacity: 0.8;
 }
 header ul.menu li a.parent{
-	background-image: url(../images/flecha_baja_k.svg);
+	background-image: url(../images/flecha_baja_w.svg);
 	background-repeat: no-repeat;
 	background-position: right center;
 	padding-right: 19px;
@@ -1028,7 +1030,7 @@ header ul.menu li a.parent{
 	background-image: url(../images/flecha_baja_w.svg);
 }
 header ul.menu li a.parent.activo{
-	background-image: url(../images/flecha_sube_k.svg);
+	background-image: url(../images/flecha_sube_w.svg);
 }
 .clear header ul.menu li a.parent.activo{
 	background-image: url(../images/flecha_sube_w.svg);
@@ -1048,7 +1050,7 @@ header ul.menu ul li{
 	margin: 8px 0;
 }
 header ul.menu ul li a{
-	color: #333;
+	color: #fff;
 	text-align: left !important;
 	float: left;
 	line-height: initial !important;
@@ -1078,7 +1080,7 @@ header ul.menu li a span{
 	transition: all .2s ease-in-out !important;	
 }
 header ul.menu li a:hover span{
-	color: #F2AE51 !important;
+	color: #ccc !important;
 	-webkit-transition: all .2s ease-in-out !important;
 	-moz-transition: all .2s ease-in-out !important;
 	transition: all .2s ease-in-out !important;	
@@ -1392,6 +1394,14 @@ footer p{
 	font-size: 16px;
 	color: #666;
 }
+footer p.linea{
+	border-left: solid 1px #ddd;
+	padding-left: 15px;
+	margin-left: 5px;
+}
+footer p.city{
+	margin-top: 5px;
+}
 footer a{
 	color:#000;
 	padding: 0 0 0 0px;
@@ -1586,20 +1596,7 @@ input.btn{
 	line-height: 30px;
 }
 }
-#subir {
-	position: fixed;
-	background-image: url(../images/subir.png);
-	background-repeat: no-repeat;
-	background-position: center center;
-	width: 50px;
-	height: 50px;
-	float: none;
-	text-indent: -9999px;
-	bottom: 10px;
-	right: 10px;
-	z-index: 1000;
-	display: none;
-}
+
  /*====================================*/
 #pull {
 	display: none!important;
@@ -1658,11 +1655,11 @@ input.btn{
 }
 #subir{
 	position: fixed;
-	background-image: url(../images/subir.svg);
+	background-image: url(../images/flecha_subir.svg);
 	background-repeat: no-repeat;
 	background-position: center center;
-	width: 50px;
-	height: 50px;
+	width: 45px;
+	height: 45px;
 	float: none;
 	text-indent: -9999px;
 	bottom: 178px;
@@ -1670,7 +1667,7 @@ input.btn{
 	right: 0px;
 	z-index: 1000;
 	display: none;
-	background-color: #F2AE51;
+	background-color: #000;
 }
 #subir:hover{
     background-color: rgba(0,0,0,0.7);
@@ -1728,23 +1725,26 @@ input.btn{
   }
 /*====================================*/
 .atras{
-	position: fixed;
-	background-image: url(../images/flecha_atras.svg);
+	background-image: url(../images/banner_prev.svg);
 	background-repeat: no-repeat;
-	background-position: center center;
-	width: 50px;
-	height: 50px;
-	float: none;
-	text-indent: -9999px;
-	top: calc(50vh - 25px);
-	font-size: 0px;
-	left: 0px;
-	z-index: 1;
-	display: inline-block;
-	background-color: #F2AE51;
+	background-size: auto 20px;
+	background-position: center left 10px;
+	width: auto;
+	height: 42px;
+	line-height: 42px;
+	float: left;
+	font-size: 20px !important;
+	display: block;
+	background-color: #000;
+	color: #fff;
+	font-weight: 900;
+	padding: 0 12px 0 30px;
+	border-radius: 5px;
+	margin: 0 0 35px 0;
+	cursor: pointer;
 }
 .atras:hover{
-	background-color: #000;
+	background-color: #333;
 }
 /*====================================*/
 .col.flx section{
@@ -1752,7 +1752,7 @@ input.btn{
 	max-width: 800px;
 }
 .nosotros .col.flx section{
-	padding: 0 50px;
+	padding: 0 20px;
 	max-width:700px;
 }
 @media screen and (max-width: 979px){
@@ -1872,16 +1872,10 @@ input.btn{
 }
 }
 .main ul.galeria li{
-	padding: 0px 20px  0 0 !important;
-	margin: 0 0 20px 0;
-	min-height: 290px;
-	max-width: 400px;
+	padding: 0px 10px  0 0 !important;
+	margin: 0 0 10px 0;
 	float: none;
 	display: inline-block;
-}
-.project_detalle .main ul.galeria li{
-	min-height: 200px;
-	margin: auto !important;
 }
 @media screen and (max-width: 979px){
 .main ul.galeria li{
@@ -1904,7 +1898,7 @@ input.btn{
 }
 .main ul.galeria li a{
 	padding: 0px !important;
-	height: 200px;
+	height: 90px;
 	float: left;
 	width: 100%;
 	background-size: cover;
@@ -1942,8 +1936,7 @@ input.btn{
 	height: auto;
 }
 .main hr:after{
-	max-width: 120px;
-	background-color: #F2AE51;
+	background-color: #DDDDDD;
 	text-align: center;
 	content: "";
 	height: 1px;
@@ -1994,16 +1987,6 @@ input.btn{
 	color: #666 !important;
 	margin: 0px 0 5px 0;
 }
-.main.showcase .col_1_4{
-	padding-top: 20px !important;
-	padding-bottom: 15px !important;
-	max-width: 360px;
-	width: 100%;
-	border-radius: 5px;
-}
-.main.showcase .col_1_4 input{
-	margin: 0 0 9px 0;
-}
 .main .col_1_4 p.pads{
 	padding: 0 30px;
 	margin: 0 0 15px 0;
@@ -2031,37 +2014,80 @@ input.btn{
 	text-align: center !important;
 }
 /*====================================*/
-.showcase{
-	height: calc(100vh - 90px);
-	min-height: 760px;
+.banner{
+	min-height: 450px;
 	background-size: cover;
 	background-position: center center;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	padding: 0 20px;
+	padding: 20px 20px 0 20px;
+	overflow: hidden;
+	margin: 0 0 75px 0;
 }
-.showcase .logo{
-	max-height: 150px;
+.curso .banner{
+	background-image: url(../images/proyectos_banner_en_curso.jpg);
 }
-.showcase .cols{
-	text-align: right;
-	max-width: 100%;
-	width: 100% !important;
-	display: inline-block !important;
+.preventa .banner{
+	background-image: url(../images/proyectos_banner_preventa.jpg);
 }
-.showcase .col_1_4{
-	padding: 0px;
-	background-color: #fff;
+.ejecutados .banner{
+	background-image: url(../images/banner_proyectos.jpg);
+}
+.aliados .banner{
+	background-image: url(../images/banner_aliados.jpg);
+}
+.nosotros .banner{
+	background-image: url(../images/banner_nosotros.jpg);
+}
+.contacto .banner{
+	background-image: url(../images/banner_contacto.jpg);
+}
+.banner:before{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	content: "";
+	background-color: rgba(0,0,0,0.3);
+	z-index: 0;
+}
+.banner .blur{
+	background-size: cover;
+	background-position: center center;
+	height: 110%;
+	width: 110%;
+	position: absolute;
+	left: -5%;
+	z-index: -60;
+	top: -5%;
+ filter: blur(13px);
+  -webkit-filter: blur(13px);
+}
+.banner h1{
+	text-align: center;
+	color: #fff;
+	font-size: 50px;
+	margin: 0 0 0 0;
+	line-height: 35px;
+	font-weight: 600;
+}
+.banner h1 span{
+	width: 100%;
+	display: inline-block;
+	font-size: 20px;
+	line-height: 20px;
+	font-weight: 300;
 }
 /*====================================*/
 /*====================================*/
-
 /*====================================*/
 .project{
 	padding: 0 20px;
 	min-height: 440px;
+	margin-bottom: 50px;
 }
 .project,
 .project *{
@@ -2103,6 +2129,7 @@ input.btn{
 	font-size: 16px;
 	color: #666;
 	line-height: 20px;
+	margin: 0px;
 }
 .project_detalle .main *{
 	text-align: center;
@@ -2220,13 +2247,16 @@ input.btn{
 	display: inline-block;
 	vertical-align: middle;
 	width: auto !important;
+	border-right: solid 1px #ddd;
+	padding: 10px 20px 15px 0;
 }
 .redes li{
 	float: none;
 	display: inline-block;
 	width: auto;	
+	height: 30px;
 	vertical-align: middle !important;
-	margin: 0px 0 0 0px !important;
+	margin: 0px 0 0 3px !important;
 }
 .redes li a,
 .redes li img{
@@ -2253,6 +2283,88 @@ input.btn{
 background-color: #F2AC51;
 }
 /*====================================*/
+.proyecto{
+	height: auto;
+}
+.proyecto .col_1_4{
+	padding: 0 20px 0 0;
+}
+.proyecto .col_1_4 *{
+	text-align: left;
+}
+.proyecto .col_1_4 h2{
+	color: #000;
+	font-size: 28px !important;
+	font-weight: 600;
+	margin: 0 0 8px 0;
+}
+.proyecto .col_1_4 h3{
+	color: #000;
+	font-size: 20px !important;
+	font-weight: 400;
+	margin: 0 0 8px 0;
+}
+.proyecto .col_1_4 p{
+	color: #666;
+	font-size: 16px !important;
+	font-weight: 300;
+	margin: 0 0 10px 0;
+}
+.proyecto .col_1_4 div p{
+	margin: 0px;
+}
+.proyecto .col_1_4 p span{
+	color: #000;
+	width: 100%;
+	display: inline-block;
+}
+.proyecto .lupa{
+	float: left;
+	margin: 0 0 7px 0;
+}
+.proyecto .web{
+	background-image: url(../images/banner_next.svg);
+	background-repeat: no-repeat;
+	background-size: auto 20px;
+	background-position: center right 13px;
+	width: auto;
+	height: 42px;
+	line-height: 42px;
+	float: left;
+	font-size: 20px !important;
+	display: block;
+	background-color: #000;
+	color: #fff;
+	text-decoration: none;
+	font-weight: 600;
+	padding: 0 33px 0 12px ;
+	border-radius: 5px;
+	margin: 30px 0 20px 0;
+	cursor: pointer;
+}
+.proyecto .web:hover{
+	background-color: #666;
+}
+.proyecto .col_3_4{
+	padding: 0 0px 0 20px;
+}
+.logos{
+	text-align: center;
+	list-style-type: none;
+	margin: 0 0 130px 0 !important;
+}
+.logos li{
+	width: auto;
+    float: none;
+	padding: 0px;
+	margin: 0px;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 28px;
+}
+.logos li:before{
+	display: none;
+}
 /*====================================*/
 /*====================================*/
 /*====================================*/

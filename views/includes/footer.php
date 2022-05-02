@@ -2,8 +2,8 @@
     <div class="cols">
         <div class="col col_izk">
             <img class="logo" src="views/images/logo_g.svg" alt="" />
-            <p><a href="tel:+576044237149" class="tel">+57 (604) 4237149</a></p>
-            <p>Medellín, Colombia</p>
+            <p class="linea"><a href="tel:+576044237149" class="tel">+57 (604) 4237149</a></p>
+            <p class="city">Medellín, Colombia</p>
         </div>
 
         <div class="col col_der">

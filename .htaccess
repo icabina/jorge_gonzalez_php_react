@@ -83,13 +83,11 @@ Options All -Indexes
 <IfModule mod_rewrite.c>
 	Rewriterule ^error404$ index.php?controller=error404
 	Rewriterule ^inicio$ index.php?controller=inicio
-    Rewriterule ^proyectos$ index.php?controller=proyectos
-	Rewriterule ^proyecto/([0-9]+)$ index.php?controller=proyecto&ID_proyecto=$1
-	Rewriterule ^trayectoria/(.+)$ index.php?controller=trayectoria&categoria=$1
-    Rewriterule ^trayectoria_detalle/([0-9]+)$ index.php?controller=trayectoria_detalle&ID_trayectoria=$1
+	Rewriterule ^proyectos/(.+)$ index.php?controller=proyectos&categoria=$1
+    Rewriterule ^proyecto/([0-9]+)$ index.php?controller=proyecto&ID_proyecto=$1
+	Rewriterule ^aliados$ index.php?controller=aliados
 	Rewriterule ^nosotros$ index.php?controller=nosotros
 	Rewriterule ^contacto$ index.php?controller=contacto
-	Rewriterule ^postventas$ index.php?controller=postventas
 	Rewriterule ^enviado$ index.php?controller=enviado
 	Rewriterule ^envia-contacto$ index.php?controller=contacto&method=enviaContactoGeneral
 	
@@ -124,12 +122,8 @@ Options All -Indexes
 	Rewriterule ^panel/proyecto/remove/delete$ index.php?controller=admin&method=proyecto_Query&action=delete
 	#
 	
-	Rewriterule ^panel/proyecto_remove_foto_presentacion/([0-9]+)/(.+)$ index.php?controller=admin&method=proyecto_item_update&ID_proyecto=$1&foto_presentacion=$2
-	Rewriterule ^panel/proyecto_remove_foto_ubicacion/([0-9]+)/(.+)$ index.php?controller=admin&method=proyecto_item_update&ID_proyecto=$1&foto_ubicacion=$2
-	Rewriterule ^panel/proyecto_remove_contacto_foto/([0-9]+)/(.+)$ index.php?controller=admin&method=proyecto_item_update&ID_proyecto=$1&contacto_foto=$2
+	Rewriterule ^panel/proyecto_remove_foto_banner/([0-9]+)/(.+)$ index.php?controller=admin&method=proyecto_item_update&ID_proyecto=$1&foto_banner=$2
 
-	Rewriterule ^panel/proyecto_remove_brochure/([0-9]+)/(.+)$ index.php?controller=admin&method=proyecto_item_update&ID_proyecto=$1&brochure=$2
-	Rewriterule ^panel/proyecto_remove_especificaciones/([0-9]+)/(.+)$ index.php?controller=admin&method=proyecto_item_update&ID_proyecto=$1&especificaciones=$2
 
 	
 

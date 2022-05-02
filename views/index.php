@@ -114,7 +114,7 @@
             </div>
 
             <div class="fila">
-                <a href="proyectos" target="_self" class="btn clear">ver todos</a>
+                <a href="proyectos/ejecutados" target="_self" class="btn clear">ver todos</a>
             </div>
         </div>
     </div>
@@ -127,7 +127,7 @@
 
 
     <!-- Load our React component. -->
-    <script src="controllers/destacados.jsx"></script>
+    <script src="controllers/DestacadosC.jsx"></script>
 
 
 

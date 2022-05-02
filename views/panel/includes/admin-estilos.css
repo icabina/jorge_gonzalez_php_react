@@ -648,7 +648,9 @@ form textarea{
 	min-height: 100px;
 	line-height: 20px;
 }
-
+form textarea.ckeditor{
+	height: 200px !important;
+}
 form #editor{
 	display: block !important;
 	height: 150px !important;
@@ -847,6 +849,10 @@ form input[type="checkbox"]{
 .login form input.btn{
 	margin: 20px 0 0px 0 !important;
 }
+.login form input.btn{
+	background-color: #F2AE51!important;
+	color: #fff !important;
+}
 .login form input.btn:hover{
 	background-color: #666 !important;
 	color: #fff !important;
@@ -984,7 +990,7 @@ form input[type="checkbox"]{
 .tabla_filtrable td img{
 	max-width: 100%;
 	float: left;
-	height: auto;
+	height: 50px;
 	width: auto;
 }
 .tabla_filtrable.maxima td img{

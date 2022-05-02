@@ -28,7 +28,7 @@
                     </a>
                     <div class="dropdown">
                         <ul>
-                            <li><a href="proyectos/ejectuados" target="_self"><span>Ejectuados</span></a></li>
+                            <li><a href="proyectos/ejecutados" target="_self"><span>Ejecutados</span></a></li>
 
 
                             <li><a href="proyectos/curso" target="_self"><span>En curso</span></a></li>
@@ -40,7 +40,7 @@
                 </li>
 
 
-                <li><a href="postventas" class="normal">
+                <li><a href="aliados" class="normal">
                         <span>Aliados</span>
                     </a>
                 </li>

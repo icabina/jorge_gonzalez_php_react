@@ -14,10 +14,6 @@ class ProyectoC{
 			}
 			$proyecto = RegistrosBdM::GetProyectoM($ID_proyecto);
 			$proyectoFotos = RegistrosBdM::GetProyectoFotosM($ID_proyecto);
-			$proyectoVideos = RegistrosBdM::GetProyectoVideosM($ID_proyecto);
-			$proyectoPlanos = RegistrosBdM::GetProyectoPlantasM($ID_proyecto);
-			$proyectoRecorridos = RegistrosBdM::GetProyectoRecorridosM($ID_proyecto);
-			$proyectoAvances = RegistrosBdM::GetProyectoAvancesM($ID_proyecto);
 			#
 		
 	
