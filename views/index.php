@@ -157,7 +157,7 @@
 
         $('.slider').bxSlider({
             auto: true,
-            pause: 3500,
+            pause: 8500,
             autoHover: false,
             pager: false,
             controls: true,

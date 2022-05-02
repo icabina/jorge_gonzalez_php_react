@@ -9,7 +9,7 @@
 
     <?php
   $page_metatitle = $proyecto['nombre'].' | ' . PAGE_META_TITLE;
-  $page_metadescription = 'Comercializamos, arrendamos y administramos propiedades para uso doméstico, comercial e industrial con inmuebles de la más alta calidad';
+  $page_metadescription = 'Desarrollamos y construimos proyectos de vivienda, hotelería, comercio e industria';
   include('views/includes/head.php');
   ?>
 
@@ -41,7 +41,7 @@
     </div>
 
 
-    <div class="fila main goodmargen">
+    <div class="fila main">
         <div class="cols">
             <div class="col col_1_4">
 
@@ -66,7 +66,7 @@
                 <?php } ?>
             </div>
 
-            <div class="col col_3_4">
+            <div class="col col_3_4 margen">
                 <p class="nanomargen"><img src="views/images/ico_lupa.svg"></p>
 
                 <div class="fila"><a href="datas/<?php echo $proyecto['grande']?>" class="lupa" rel="shadowbox[Lupa]">

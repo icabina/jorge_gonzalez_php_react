@@ -9,7 +9,7 @@
 
     <?php
   $page_metatitle = 'Contacto | ' . PAGE_META_TITLE;
-  $page_metadescription = 'Comercializamos, arrendamos y administramos propiedades para uso doméstico, comercial e industrial con inmuebles de la más alta calidad';
+  $page_metadescription = 'Desarrollamos y construimos proyectos de vivienda, hotelería, comercio e industria';
   include('views/includes/head.php');
   ?>
 
@@ -44,19 +44,21 @@
 
     <div class="fila main supermargen formulario">
         <div class="cols narrow">
-            <div class="col col_1 centro">
-
-                <div class="inline tinymargen">
-                    <a target="blank" href="https://api.whatsapp.com/send?phone=573182513388" class="wap">
-                        <span>+57 318 251 3388</span></a>
-                    <a href="tel:+57 (601) 927 9304" class="tel"><span>+57 (601) 927 9304</span></a>
+            <div class="col col_1_3">
+                <div class="fila">
+                    <a href="tel:+576044237149" class="tel">+57 (604) 4237149</a>
                 </div>
 
-                <p class="mediamargen">Cra. 78 # 11- C21 / Bogotá, Colombia</p>
+                <hr />
 
-                <hr class="smallmargen" />
+                <p>Calle 8 43 C 48<br />
+                    Medellín, Colombia</p>
 
-
+                <div class="fila">
+                    <a href="#" target="_self" class="btn">ver en mapa</a>
+                </div>
+            </div>
+            <div class="col col_2_3">
 
                 <form action="envia-contacto" method="post" target="_self">
 
@@ -65,14 +67,12 @@
 
                     <div class="cols">
                         <div class="col col_2">
-
-                            <input type="text" name="nombre" placeholder="Tu nombre(*)" autocomplete="no-complete"
+                            <input type="text" name="nombre" placeholder="Nombre(*)" autocomplete="no-complete"
                                 value="">
                         </div>
                         <div class="col col_2">
 
-                            <input type="text" name="apellido" placeholder="Tu apellido(*)" autocomplete="no-complete"
-                                value="">
+                            <input type="text" name="empresa" placeholder="Empresa" autocomplete="no-complete" value="">
                         </div>
                     </div>
 
@@ -83,8 +83,7 @@
                         </div>
                         <div class="col col_2">
 
-                            <input type="text" name="celular" placeholder="Celular(*)" autocomplete="no-complete"
-                                value="">
+                            <input type="text" name="celular" placeholder="Celular" autocomplete="no-complete" value="">
                         </div>
                     </div>
 
@@ -106,19 +105,19 @@
                     </div>
 
                     <div class="fila cols">
-                        <div class="col col_1">
+                        <div class="col col_1 mediamargen">
 
                             <textarea name="comentarios" placeholder="Comentario"></textarea>
                         </div>
-                        <div class="col col_1 aviso_privacidad mediamargen">
+                        <div class="col col_1 aviso_privacidad halfmargen">
                             <div>
                                 <input id="privacidad_check" name="privacidad_check" type="checkbox" value="1">
                                 <p class="etiqueta">Acepto la <a target="_blank" href="#">política de manejo de datos
                                         personales</a>
-                                    de IV3 Arquitectura</p>
+                                    de Jorge Gonzales Ingeniería</p>
                             </div>
                         </div>
-                        <div class="fila">
+                        <div class="fila centro">
                             <input class="btn" name="boton" type="submit" value="Enviar" disabled>
                         </div>
                     </div>

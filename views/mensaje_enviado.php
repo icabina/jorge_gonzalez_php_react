@@ -8,7 +8,7 @@
 
 
     <?php
-  $page_metatitle = 'Error 404 | ' . PAGE_META_TITLE;
+  $page_metatitle = 'Mensaje enviado | ' . PAGE_META_TITLE;
   $page_metadescription = 'Desarrollamos y construimos proyectos de vivienda, hotelería, comercio e industria';
   include('views/includes/head.php');
   ?>
@@ -34,7 +34,7 @@
     <div class="fila banner">
         <div class="cols">
             <div class="col col_1">
-                <h1>Error 404</h1>
+                <h1>Mensaje Enviado</h1>
             </div>
         </div>
     </div>
@@ -45,8 +45,8 @@
     <div class="fila main supermargen">
         <div class="cols narrow">
             <div class="col col_1 centro">
-                <h2>La página que buscas no existe</h2>
-                <p>Por favor navega mediante el menú principal</p>
+                <h2>Gracias por contactarnos</h2>
+                <p>Nos pondremos en contacto a la mayor brevedad posible.</p>
             </div>
         </div>
     </div>

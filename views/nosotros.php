@@ -8,8 +8,8 @@
 
 
     <?php
-  $page_metatitle = 'Aliados | ' . PAGE_META_TITLE;
-  $page_metadescription = 'Comercializamos, arrendamos y administramos propiedades para uso doméstico, comercial e industrial con inmuebles de la más alta calidad';
+  $page_metatitle = 'Nosotros | ' . PAGE_META_TITLE;
+  $page_metadescription = 'Desarrollamos y construimos proyectos de vivienda, hotelería, comercio e industria';
   include('views/includes/head.php');
   ?>
 

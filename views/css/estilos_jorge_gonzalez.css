@@ -69,7 +69,7 @@ hr{
 	height: 1px;
 	border: 0px;
 	display: inline-block;
-	margin-bottom: 20px;
+	margin-bottom: 22px;
 }
 input,
 textarea,
@@ -269,12 +269,6 @@ header .cols{
 .col .logo{
 	max-width: 100%;
 }
-@media screen and (max-width: 979px){
-.col .logo{
-	max-width: 280px;
-	width: 100%;
-}
-}
 .col img.full{
 	width: 100%;
 }
@@ -350,6 +344,15 @@ header .cols{
 }
 .parent .cols .col_3{
 	padding: 0 10px !important;
+}
+form .cols .col_2:nth-child(1n){
+	padding-right: 7px;
+	padding-left: 0px;
+}
+
+form .cols .col_2:nth-child(2n){
+	padding-left: 7px;
+	padding-right: 0px;
 }
 @media screen and (max-width: 979px) {
 .parent .cols .col_3{
@@ -505,9 +508,12 @@ header .cols{
 	max-width: 695px;
   text-align: center;
 }
-@media screen and (max-width: 979x){
 .formulario form .cols{
-  margin: 0px;
+  margin: 0 0 14px 0;
+}
+@media screen and (max-width: 979px){
+.formulario form .cols{
+  margin: 0 0 0px 0;
 }
 .formulario form input,
 .formulario form select{
@@ -855,12 +861,6 @@ header .cols{
 header .logo{
 	margin-left: 20px;
 }
-header .logo.white{
-	display: none;
-}
-header .logo.black{
-	display: inline-block;
-}
 }
 header .logo img{
 	max-height: 120px !important;
@@ -967,9 +967,9 @@ header ul.menu .dropdown ul{
 }
 @media screen and (max-width: 1179px){
 header ul.menu .dropdown ul{
-	background-color: #000;
+	background-color: #fff;
 	box-shadow: 3px 3px 10px rgba(0,0,0,0);
-
+	margin: 0 0 18px 0;
 }
 }
 header ul.menu li a{
@@ -1376,6 +1376,13 @@ footer{
 	min-height: auto;
 }
 @media screen and (max-width: 979px){
+footer .col .logo{
+	max-width: 280px;
+	width: 100%;
+	margin: 0px 0 20px 0 !important;
+}
+}
+@media screen and (max-width: 979px){
 footer{
 }
 }
@@ -1389,15 +1396,35 @@ footer p{
 	width: auto;
 	display: inline-block;
 	vertical-align: middle;
-	margin: 0px 10px 0 0;;
+	margin: 0px 10px 0 0;
 	float: none;
 	font-size: 16px;
 	color: #666;
+}
+@media screen and (max-width: 979px){
+footer p{
+    margin: 0px !important;
+}
 }
 footer p.linea{
 	border-left: solid 1px #ddd;
 	padding-left: 15px;
 	margin-left: 5px;
+}
+@media screen and (max-width: 979px){
+}
+footer p.linea{
+	border-left: solid 0px #ddd;
+	border-left: 0px;
+	padding-t: 0px;
+	margin: 15px 0px;
+	width: 100%;
+	float: left;
+	text-align: center;
+}
+footer p.linea .tel{
+	float: none;
+}
 }
 footer p.city{
 	margin-top: 5px;
@@ -1578,6 +1605,16 @@ input.btn{
 #dejanos_datos{
 	margin: 20px 0 0 0;
 }
+form .btn{
+	width: 160px !important;
+	height: 42px !important;
+	padding: 0px!important;
+	text-align: center !important;
+	line-height: 42px!important;
+}
+form .btn:hover{
+	background-color: #666 !important;
+}
 /*====================================*/
 .fila .titulo{
 	width: 100%  !important;
@@ -1609,14 +1646,14 @@ input.btn{
 	z-index: 1000;
 	width: 30px !important;
 	height: 23px;
-	border-bottom: 3px solid #F2AE51;
+	border-bottom: 3px solid #fff;
 	-webkit-transition: all .5s ease-in-out;
 	-moz-transition: all .5s ease-in-out;
 	transition: all .5s ease-in-out;
 	-webkit-transition-property: color, border;
 	-moz-transition-property: color, border;
 	transition-property: color, border;
-	color: #F2AE51;
+	color: #fff;
 }
 @media screen and (max-width: 1179px) {
 #pull {
@@ -1774,6 +1811,9 @@ input.btn{
 	font-weight: 600;
 	line-height: 35px;
 	margin: 0 0 20px 0;
+}
+.main .centro h2{
+	text-align: center;
 }
 .main h2.title{
 	text-align: center;
@@ -2024,7 +2064,13 @@ input.btn{
 	justify-content: center;
 	padding: 20px 20px 0 20px;
 	overflow: hidden;
-	margin: 0 0 75px 0;
+	margin: 0 0 70px 0;
+}
+@media screen and (max-width: 979px) {
+.banner{
+	min-height: 350px;
+	margin: 0 0 35px 0;
+}
 }
 .curso .banner{
 	background-image: url(../images/proyectos_banner_en_curso.jpg);
@@ -2043,6 +2089,9 @@ input.btn{
 }
 .contacto .banner{
 	background-image: url(../images/banner_contacto.jpg);
+}
+.enviado .banner{
+	background-image: url(../images/banner_enviado.jpg);
 }
 .banner:before{
 	width: 100%;
@@ -2073,6 +2122,13 @@ input.btn{
 	margin: 0 0 0 0;
 	line-height: 35px;
 	font-weight: 600;
+}
+@media screen and (max-width: 979px){
+.banner h1{
+	text-align: center;
+	color: #fff;
+	font-size: 35px;
+}
 }
 .banner h1 span{
 	width: 100%;
@@ -2154,8 +2210,7 @@ input.btn{
 	display: inline-block !important;
 	padding: 0 10px !important;
 }
-@media screen and (max-width: 979px) {
-}
+
 /*====================================*/
 .nosotros .fondo{
 	background-color: #333;
@@ -2249,6 +2304,17 @@ input.btn{
 	width: auto !important;
 	border-right: solid 1px #ddd;
 	padding: 10px 20px 15px 0;
+}
+@media screen and (max-width: 979px) {
+.redes{
+	float:left !important;
+	display: inline-block;
+	vertical-align: middle;
+	width: 100% !important;
+	border-right: solid 0px #ddd;
+	margin: 20px 0;
+	padding: 0px 0px 0px 0;
+}
 }
 .redes li{
 	float: none;
@@ -2364,6 +2430,60 @@ background-color: #F2AC51;
 }
 .logos li:before{
 	display: none;
+}
+.contacto .col_1_3 a.tel{
+	color:#000;
+	padding: 0 0 0 0px;
+	min-height: auto;
+	float: left;
+	line-height: initial;
+	margin: 0 0 0px 0;
+	text-decoration: none;
+	font-weight: 500;
+	font-size: 22px;
+	display: inline-block;
+	vertical-align: middle;
+	background-image: url(../images/footer_tel.svg);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding: 10px 0 10px 41px; 
+}
+.contacto .col_1_3 a.tel:hover{
+	color: #666;
+}
+.contacto .col_1_3 hr{
+	max-width: 115px;
+	float: left;
+}
+@media screen and (max-width: 979px) {
+.contacto .col_1_3 a.tel{
+	float: none;
+	margin: 0 0 0px 0;
+}
+.contacto .col_1_3 hr{
+	max-width: 115px;
+	float: none;
+	margin: auto;
+	margin-bottom: 20px;
+}
+}
+.contacto .col_1_3 p{
+	font-size: 18px !important;
+}
+.contacto .btn{
+	float: left;
+}
+@media screen and (max-width: 979px) {
+.contacto .col_1_3{
+	margin: 0 0 45px 0;
+}
+.contacto .btn{
+	float: none;
+	margin: auto;
+}
+}
+.contacto .centro .btn{
+	float: none;
 }
 /*====================================*/
 /*====================================*/
