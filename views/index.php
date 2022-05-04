@@ -30,16 +30,21 @@
 
             <?php foreach ($banners as $banner) { ?>
 
-            <li style="background-image: url(datas/<?php echo $banner['banner'] ?>)">
-
-                <div class="cajon">
-                    <h3><?php echo $banner['nombre'] ?></h3>
-                    <?php if($banner['descripcion'] !=''){ ?><h4><?php echo $banner['descripcion'] ?></h4><?php } ?>
-                    <?php if($banner['link'] !='') {?>
-                    <a href="<?php echo $banner['link'] ?>" target="<?php echo $banner['target'] ?>"
-                        class="btn"><span>ver</span></a>
-                    <?php } ?>
+            <li class="fila" style="background-image: url(datas/<?php echo $banner['banner'] ?>)">
+                <div class="cols wide">
+                    <div class="col col_1">
+                        <div class="cajon">
+                            <h3><?php echo $banner['nombre'] ?></h3>
+                            <?php if($banner['descripcion'] !=''){ ?><h4><?php echo $banner['descripcion'] ?></h4>
+                            <?php } ?>
+                            <?php if($banner['link'] !='') {?>
+                            <a href="<?php echo $banner['link'] ?>" target="<?php echo $banner['target'] ?>"
+                                class="btn"><span>ver</span></a>
+                            <?php } ?>
+                        </div>
+                    </div>
                 </div>
+
             </li>
             <?php } ?>
         </ul>
@@ -124,10 +129,11 @@
     <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-
-
+    <!--   Load Babel -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <!-- Load our React component. -->
-    <script src="controllers/DestacadosC.jsx"></script>
+    <script type="text/babel" src="controllers/DestacadosC.jsx">
+    </script>
 
 
 

@@ -1,0 +1,24 @@
+{
+  "name": "jorge_gonzalez",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000j\u0000o\u0000r\u0000g\u0000e\u0000_\u0000g\u0000o\u0000n\u0000z\u0000a\u0000l\u0000e\u0000z\u0000_\u0000p\u0000h\u0000p\u0000_\u0000r\u0000e\u0000a\u0000c\u0000t\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/icabina/jorge_gonzalez_php_react.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/icabina/jorge_gonzalez_php_react/issues"
+  },
+  "homepage": "https://github.com/icabina/jorge_gonzalez_php_react#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-app": "^3.1.2"
+  }
+}
